@@ -14,9 +14,10 @@ app.use(bodyParser.json());
 app.use(require('./server/routes/index'));
 
 //Conexion a la base de datos
-mongoose.connect('mongodb://localhost:27017/cafeteria', {
+mongoose.connect(process.env.URLDB, {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useCreateIndex: true
 
     },
     (err, resp) => {
