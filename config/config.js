@@ -14,4 +14,11 @@ if (process.env.MODE_ENV === 'dev') {
     urlDB = 'mongodb+srv://admin:n1bUNUEafq7OVvWN@cluster0-bepyf.mongodb.net/cafeteria'; //ambiente producción
 }
 
+
 process.env.URLDB = urlDB; //todo lo que esta en process con variables super globales=> esta define a que coneccion
+
+//firma de JWT
+//process.env.SEED = process.env.SEED || 'firma-super-secreta';
+
+//EXPIRED TIME JWT
+//process.env.CADUCIDAD_TOKEN = process.env.CADUCIDAD_TOKEN || '3h';

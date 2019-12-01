@@ -67,28 +67,6 @@ app.put('/categoria/:id', (req, res) => {
 
 app.delete('/categoria/:id', (req, res) => {
     let id = req.params.id;
-    // Usuario.deleteOne({ _id: id }, (err, resp) => {
-    //     if (err) {
-    //         return res.status(400).json({
-    //             ok: false,
-    //             err
-    //         });
-    //     }
-    //     if (resp.deletedCount === 0) {
-    //         return res.status(400).json({
-    //             ok: false,
-    //             err: {
-    //                 id,
-    //                 msg: 'Usuario no encontrado'
-    //             }
-    //         });
-    //     }
-    //     return res.status(200).json({
-    //         ok: true,
-    //         resp
-    //     });
-
-    // });
     Categoria.findByIdAndUpdate(id, { disponible: false }, { new: true, runValidators: true, context: 'query' }, (err, resp) => {
         if (err) {
             return res.status(400).json({
